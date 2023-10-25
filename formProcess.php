@@ -6,14 +6,20 @@ if(isset($_POST['submit'])) {
     var_dump($_POST);
 }
 
-$firstName = $_POST['fName'];
-//use email in future as single unique binding var
+$email = $_POST['email'];
 //look into php data validation; strip_tags(), html_special_chars(), regular expressions regex (regexr.com) ((phone number matches format for ex.))
-$query = "SELECT * FROM `users` WHERE `first_name` = :first_name";
+$query = "SELECT * FROM `users` WHERE `email` = :email";
 $stmt = $connection->prepare($query);
-$stmt->bindParam('first_name', $firstName);
+$stmt->bindParam('email', $email);
 $stmt->execute();
-$result = $stmt->fetchAll();
+$result = $stmt->fetch();
+if($result) { //i.e. login successful
+    if($result['privilege'] == 1) {
+        echo "Hello Admin";
+    } else {
+        echo "Hello Regular User";
+    }
+}
 var_dump($result);
 
 ?>
