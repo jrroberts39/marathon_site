@@ -9,7 +9,7 @@ $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $password = $_POST['pass'];
-$query = "INSERT INTO `users` VALUES (:firstName, :lastName, :email, :password)";
+$query = "INSERT INTO `users` VALUES (5, :firstName, :lastName, :email, :password, 0)";
 $stmt = $connection->prepare($query);
 $stmt->bindParam('firstName', $firstName);
 $stmt->bindParam('lastName', $lastName);
