@@ -1,103 +1,10 @@
 <html>
 <head>
-    <style>
-        /*---------GENERAL STYLE---------*/
-        @font-face {
-            font-family: glide_font;
-            src: url(Bayoreh.otf);  
-        }
-        body { 
-            font-family: glide_font;
-            background-image: url("images/white_blossom.jpg");
-            background-position: center; /* Center the image */
-            background-size: cover; /* Resize the background image to cover the entire container */
 
-        }
-        a { 
-            color: #666766;
-        }
-        /*---------NAVIGATION---------*/
-        /*logobar--ul = nav_left_elements*/
-        .logo_bar {
-            height: 75px;
-            border-bottom: 1px dotted darkred;
-            background-color: rgba(255,255,255,0.8);
-        }
-        .logo_left_elements {
-            display: inline-block;
-            float: left;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .logo_left_elements li {
-            float: left;
-            height: 75px;
-        }
-        .logo_left_elements h2 { 
-            margin-top: 40px;
-            margin-left: 8px;
-        }
-        .logo_right_elements {
-            display: inline-block;
-            float: right;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .logo_right_elements li {
-            float: right;
-            height: 75px;
-        }
-        .logo_right_elements h3 { 
-            margin-top: 44px;
-            margin-right: 8px;
-        }
-        .logo_right_elements img{ 
-            margin-top: 19px;
-            margin-right: 5px;
-            max-width: 35px;
-        }
-        /*navbar--ul = nav_left_elements*/
-        .nav_left_elements { 
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            border-bottom: 1px solid darkred;
-            background-color: rgba(255,255,255,0.8);
-        }
-        .nav_left_elements li {
-            float: left;
-        }
-        .nav_left_elements a {
-            display: block;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .nav_left_elements a {
-            margin-left: 5px;
-        }
-        .nav_left_elements a:hover {
-            background-color: #FFD520;
-        }
-        /*---------CONTENT---------*/
-        .container {
-            width: 80%;
-            margin: auto;
-            background-color: rgba(255,255,255,0.8);
-            padding: 10px;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .container img {
-            float: right;
-            display: inline-block;
-            margin-right: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
       
@@ -111,16 +18,75 @@
             <li><h3><a href = "form.php">Sign In</a></h3></li>  
         </ul>
     </div>
-    <ul class = "nav_left_elements">
-        <li><a href="#">Races</a></li>
-        <li><a href="#">Photos</a></li>
-        <li><a href="#">Shop</a></li>  
-    </ul>
+    <div class= "nav_elements">
+        <ul class = "nav_left_elements">
+            <li><a href="#">Races</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Shop</a></li>  
+        </ul>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="images/hustle_banner.png" style="width:100%">
+          <!-- <div class="text">Harvest Hustle</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="images/fall_banner.jpg" style="width:100%">
+          <!-- <div class="text">Fall is Fun</div> -->
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="images/chessie_banner.png" style="width:100%">
+          <!-- <div class="text">Chessie Trail</div> -->
+        </div>
+        
+    </div>
+
+    <br><br>
+
     <div class = "container">
+
+        
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+
+        <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 4000); // Change image every 2 seconds
+            }
+            </script>
+            
+
+        <!-- <img src="images/banner.png"/ style = "width: 100%; height: 450px; margin: auto;"> -->
         <h1>About Us!</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies laoreet ligula eget dapibus. Phasellus dignissim sagittis justo nec faucibus. Vestibulum vel tincidunt metus. In volutpat volutpat massa, a pharetra nisi laoreet ut. Aliquam accumsan tempus augue. Integer ac ante in lacus egestas ultricies non in eros. Morbi lacinia, dui interdum vulputate varius, ipsum ligula facilisis tortor, at tempus tortor tellus a lacus. Donec semper faucibus tincidunt. Morbi non justo eu ligula lacinia ullamcorper at non purus. Aliquam erat volutpat. Aenean vestibulum urna porta, varius nisl sit amet, tristique ipsum. Nullam aliquet malesuada ante, ac dapibus erat varius a. Curabitur arcu neque, auctor non consectetur scelerisque, imperdiet ut massa. Vivamus maximus lacus felis, id rhoncus augue varius nec. Curabitur id massa dolor.
 
-            Aliquam fringilla porttitor sapien, eu fermentum nunc euismod at. <img src="images/og_bois.jpg"/> Sed tristique, massa sed laoreet tincidunt, urna sapien scelerisque tellus, a mollis tellus sem quis nibh. Nunc imperdiet auctor aliquet. Nam eu porttitor ipsum, vel posuere metus. Donec ac velit id massa vehicula tincidunt vitae vehicula ante. In sed lectus eget leo gravida interdum. Proin quis neque dignissim, lacinia justo nec, molestie leo. Etiam et lacus dignissim dolor scelerisque pharetra.
+            Aliquam fringilla porttitor sapien, eu fermentum nunc euismod at. Sed tristique, massa sed laoreet tincidunt, urna sapien scelerisque tellus, a mollis tellus sem quis nibh. Nunc imperdiet auctor aliquet. Nam eu porttitor ipsum, vel posuere metus. Donec ac velit id massa vehicula tincidunt vitae vehicula ante. In sed lectus eget leo gravida interdum. Proin quis neque dignissim, lacinia justo nec, molestie leo. Etiam et lacus dignissim dolor scelerisque pharetra.
             
             Nulla eu est lectus. Cras ut iaculis neque. Nam eget quam sed magna pretium faucibus. Mauris elit ligula, porttitor sed tortor accumsan, lacinia finibus leo. Nam maximus vulputate massa ut efficitur. Proin posuere, elit malesuada porta viverra, metus arcu elementum arcu, sit amet varius sapien ex quis nulla. Sed euismod dolor sit amet eleifend laoreet. Ut id sapien maximus, aliquam ex non, pharetra eros. Duis erat nisl, interdum a fringilla sed, molestie eleifend sem. Sed lobortis mi et justo mollis, in bibendum elit consequat. Pellentesque sit amet porttitor sapien. Nulla nec consequat ipsum.
             
