@@ -1,3 +1,17 @@
+<?php
+session_start();
+if(!(isset($_SESSION['username']))){
+  $_SESSION['username'] = "Guest, Sign In";
+} else if($_SESSION['privilege'] == 1) { 
+  $_SESSION['username'] = "ADMIN";
+} else if($_SESSION['privilege'] == 0) { 
+  $_SESSION['username'] = "USER";
+}
+
+
+
+?>
+
 <html>
 <head>
 
@@ -14,8 +28,12 @@
             <li><h2>VMI Running Club</h2></li>
         </ul>
         <ul class = "logo_right_elements">
-            <li><img src="images/avatar.png"></li>   
-            <li><h3><a href = "form.php">Sign In</a></h3></li>  
+            <li><img src="images/avatar.png"></li> 
+            <?php if($_SESSION['username'] == "ADMIN" || $_SESSION['username'] == "USER"): ?>
+              <html><li><h3><a href = "signout.php">SIGN OUT</a></h3></li></html> 
+              <?php else: ?>
+              <html><li><h3><a href = "form.php">Welcome <?=$_SESSION['username']?></a></h3></li></html>  
+              <?php endif; ?>
         </ul>
     </div>
     <div class= "nav_elements">

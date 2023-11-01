@@ -1,14 +1,14 @@
 
     * {box-sizing: border-box;}
     .mySlides {display: none;}
-    img {vertical-align: middle; max-width: 100%; max-height: 350px;}
+    img {vertical-align: middle; max-width: 100%; max-height: 300px;}
 
     /* Slideshow container */
     .slideshow-container {
         margin: auto;
         margin-top: 119px;
         max-width: 80%;
-        max-height: 310px;
+        max-height: 300px;
         position: relative;
         }
 
