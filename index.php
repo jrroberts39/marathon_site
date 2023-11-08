@@ -1,14 +1,8 @@
 <?php
-session_start();
-if(!(isset($_SESSION['username']))){
-  $_SESSION['username'] = "Guest, Sign In";
-} else if($_SESSION['privilege'] == 1) { 
-  $_SESSION['username'] = "ADMIN";
-} else if($_SESSION['privilege'] == 0) { 
-  $_SESSION['username'] = "USER";
+
+if(session_status() != PHP_SESSION_ACTIVE){
+  session_start();
 }
-
-
 
 ?>
 
@@ -29,11 +23,13 @@ if(!(isset($_SESSION['username']))){
         </ul>
         <ul class = "logo_right_elements">
             <li><img src="images/avatar.png"></li> 
-            <?php if($_SESSION['username'] == "ADMIN" || $_SESSION['username'] == "USER"): ?>
-              <html><li><h3><a href = "signout.php">SIGN OUT</a></h3></li></html> 
-              <?php else: ?>
-              <html><li><h3><a href = "form.php">Welcome <?=$_SESSION['username']?></a></h3></li></html>  
-              <?php endif; ?>
+            <?php if(isset($_SESSION['privilege'])): ?> <!--i.e. logged in-->
+              <li><h3><a href = "signout.php">Sign Out</a></h3></li>
+              <li><h3><a href = "#">Manage User</a></h3></li>
+            <?php else: ?>              
+              <li><h3><a href="login.php">Login</a></h3></li>
+              <li><h3><a href="register.php">Register</a></h3></li>
+            <?php endif; ?>
         </ul>
     </div>
     <div class= "nav_elements">
