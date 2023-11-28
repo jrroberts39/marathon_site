@@ -23,20 +23,14 @@
 
     //check if (hashed) password is correct
     if(password_verify($password, $result['password'])){ //i.e. login successful
-
+        //fill session variables with result
         $_SESSION['privilege'] = $result['privilege'];
         $_SESSION['email'] = $result['email'];
         $_SESSION['firstName'] = $result['first_name'];
-      
-    } else {
-        echo "FAILED LOGIN";
-        exit();
+        header("Location: index.php");
+
+    } else { //login failed
+       header("Location: failedLogin.php");
     }
-    
-
-    $_SESSION['username'] = $result['email'];
-    $_SESSION['privilege'] = $result['privilege'];
-
-    header("Location: index.php");
 
 ?>

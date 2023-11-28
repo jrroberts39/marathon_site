@@ -1,0 +1,6 @@
+todo
+2.3) The Manage Others page must show a list of all users in the database and allow the user to
+modify their data
+2.4) The Manage Self page must allow the user to manage their own data as well as change their
+password at will. 
+pupulate table with fields in db ^^ FULL CRUD

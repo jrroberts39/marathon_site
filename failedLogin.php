@@ -1,7 +1,7 @@
 <html>
 <link rel="stylesheet" href="style.css">
 <div class = "container">
-<h1>Sign in with existing account</h1>
+<h1>Sign in with existing account</h1> <p style = "color: red">Failed Login! Please Try Again.</p>
 <p>New User? <a href = "register.php">Create Account</a></p>
 <form action = "loginProcessing.php" method="POST">
 <h2>Email:</h2><input name ="email" type = "text"/>
@@ -11,6 +11,3 @@
 </div>
 </form>
 </html>
-
-
-
