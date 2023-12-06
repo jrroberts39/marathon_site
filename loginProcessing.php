@@ -24,6 +24,7 @@
     //check if (hashed) password is correct
     if(password_verify($password, $result['password'])){ //i.e. login successful
         //fill session variables with result
+        $_SESSION['id'] = $result['id'];
         $_SESSION['privilege'] = $result['privilege'];
         $_SESSION['email'] = $result['email'];
         $_SESSION['firstName'] = $result['first_name'];

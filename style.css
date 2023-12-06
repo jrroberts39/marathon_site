@@ -85,7 +85,7 @@
             background-color: #FFD520;
         }
         body { 
-            background-color: rgb(87, 87, 87);
+            background-color: rgb(202, 202, 202);
             font-family: glide_font;
         }
         .contain { /*For Main Page */
@@ -122,9 +122,35 @@
             padding-left: 1em;
         }
 
+        /* TODO */
         /* ADD ABOUT US PAGE AND HIDE MAIN CONTENT ON MOBILE */
         #main_content { 
             width: 100%;
             padding: 5px;
             /* border: 2px solid salmon;  DEBUGGING*/
         }
+
+        #users {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 100%;
+          }
+          
+          #users td, #users th {
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+          
+          #users tr:nth-child(even){background-color: #f2f2f2;}
+          #users tr:nth-child(odd){background-color: #cfcfcf;}
+
+          
+          #users tr:hover {background-color: rgb(221, 221, 221);}
+          
+          #users th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: darkred;
+            color: rgb(240, 240, 240);
+          }

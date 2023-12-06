@@ -4,3 +4,6 @@ modify their data
 2.4) The Manage Self page must allow the user to manage their own data as well as change their
 password at will. 
 pupulate table with fields in db ^^ FULL CRUD
+
+CMS - content management system; ultimate goal
+ -> wordpress blogger

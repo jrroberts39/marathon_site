@@ -28,7 +28,7 @@ if(session_status() != PHP_SESSION_ACTIVE){
                 <li><img src="images/avatar.png"></li> 
                 <?php if(isset($_SESSION['privilege'])): ?> <!--i.e. logged in-->
                   <li><h3><a href = "signout.php">Sign Out</a></h3></li>
-                  <li><h3><a href = "#">Manage User</a></h3></li>
+                  <li><h3><a href = "manageUser.php">Manage User(s)</a></h3></li>
                 <?php else: ?>              
                   <li><h3><a href="login.php">Login</a></h3></li>
                   <li><h3><a href="register.php">Register</a></h3></li>
