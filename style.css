@@ -85,7 +85,7 @@
             background-color: #FFD520;
         }
         body { 
-            background-color: rgb(202, 202, 202);
+            background-image: url('images/bled.jpg');
             font-family: glide_font;
         }
         .contain { /*For Main Page */
@@ -93,11 +93,9 @@
             /* flex-wrap: wrap; */
             height: 800px;
             /* border: 2px solid black; */
-            margin-top: 122px;
-            margin-left: 5vh;
-            margin-right: 5vh;
+            margin: 122px 10vh 0 10vh;
             /* background-color: rgb(251, 253, 255); */
-            background-color: white;
+            background-color: lightgray;
         }
 
         .container { /*Other Pages */
